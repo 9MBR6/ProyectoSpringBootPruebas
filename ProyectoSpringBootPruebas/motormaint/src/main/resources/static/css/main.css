@@ -1,0 +1,397 @@
+/* Estilos generales del cuerpo y fuente */
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Contenedor principal para la mayoría de las páginas */
+.container {
+    max-width: 1400px; /* Ancho máximo para el contenido */
+    margin: 20px auto; /* Margen superior/inferior, centrado horizontalmente */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Nuevo estilo para centrar contenido específico dentro de un contenedor */
+.centered-content {
+    display: flex;
+    flex-direction: column; /* Apila los elementos verticalmente */
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 150px); /* Ajusta si el navbar/footer tienen diferente altura */
+    text-align: center;
+}
+
+/* Encabezados */
+h1 {
+    color: #007bff;
+    text-align: center;
+    margin-bottom: 30px;
+}
+h2 { /* Estilo específico para h2 en info de moto */
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.5em;
+}
+
+/* Párrafos descriptivos (como en la página de inicio) */
+p {
+    margin-bottom: 30px;
+    font-size: 1.1em;
+    color: #555;
+}
+
+/* Estilos de alertas (mensajes de éxito/error) */
+.alert {
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Estilos de botones generales */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-right: 5px; /* Espacio entre botones */
+}
+/* Botones primarios (ej. Añadir) */
+.btn-primary {
+    background-color: #28a745;
+    color: white;
+}
+.btn-primary:hover {
+    background-color: #218838;
+}
+/* Botones de información (ej. Ver Mantenimientos) */
+.btn-info {
+    background-color: #17a2b8;
+    color: white;
+}
+.btn-info:hover {
+    background-color: #138496;
+}
+/* Botones de edición */
+.btn-edit {
+    background-color: #ffc107;
+    color: #333;
+}
+.btn-edit:hover {
+    background-color: #e0a800;
+}
+/* Botones de eliminación */
+.btn-delete {
+    background-color: #dc3545;
+    color: white;
+    border: none; /* Eliminar borde del botón nativo */
+    cursor: pointer;
+}
+.btn-delete:hover {
+    background-color: #c82333;
+}
+/* Botones secundarios (ej. Volver, Cancelar) */
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+}
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+/* Estilos para el contenedor de botones de navegación (página de inicio) */
+.nav-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+.nav-buttons a { /* Estilos específicos para los enlaces en .nav-buttons */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 180px;
+    height: 60px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 0 20px;
+}
+.nav-buttons a:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+}
+
+/* Estilos de tablas */
+table {
+    width: 100%;
+    min-width: 900px; /* Ancho mínimo para tablas en desktop */
+    border-collapse: separate; /* Para border-radius en las esquinas */
+    border-spacing: 0;
+    margin-top: 20px;
+    overflow: hidden; /* Para que el border-radius se vea bien */
+    border-radius: 8px;
+    table-layout: fixed; /* Crucial para que los anchos de columna funcionen */
+}
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    word-wrap: break-word; /* Permite que el texto largo se rompa en varias líneas */
+}
+th {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+}
+tr:nth-child(even) { /* Filas pares con fondo diferente */
+    background-color: #f8f8f8;
+}
+tr:hover { /* Efecto al pasar el ratón por encima de las filas */
+    background-color: #e9ecef;
+}
+td:last-child {
+    white-space: nowrap; /* Evita que los botones de acción se rompan en varias líneas */
+}
+
+/* Anchos de columna específicos para la tabla de Motos */
+/* Ajustar si no usas todos estos campos o si añades más */
+table.motos-table th:nth-child(1), table.motos-table td:nth-child(1) { width: 5%; }
+table.motos-table th:nth-child(2), table.motos-table td:nth-child(2) { width: 10%; }
+table.motos-table th:nth-child(3), table.motos-table td:nth-child(3) { width: 15%; }
+table.motos-table th:nth-child(4), table.motos-table td:nth-child(4) { width: 8%; }
+table.motos-table th:nth-child(5), table.motos-table td:nth-child(5) { width: 10%; }
+table.motos-table th:nth-child(6), table.motos-table td:nth-child(6) { width: 12%; }
+table.motos-table th:nth-child(7), table.motos-table td:nth-child(7) { width: 25%; }
+
+/* Anchos de columna específicos para la tabla de Mantenimientos (Global y por Moto) */
+table.mantenimientos-table th:nth-child(1), table.mantenimientos-table td:nth-child(1) { width: 5%; }
+table.mantenimientos-table th:nth-child(2), table.mantenimientos-table td:nth-child(2) { width: 15%; }
+table.mantenimientos-table th:nth-child(3), table.mantenimientos-table td:nth-child(3) { width: 15%; }
+table.mantenimientos-table th:nth-child(4), table.mantenimientos-table td:nth-child(4) { width: 15%; }
+table.mantenimientos-table th:nth-child(5), table.mantenimientos-table td:nth-child(5) { width: 10%; }
+table.mantenimientos-table th:nth-child(6), table.mantenimientos-table td:nth-child(6) { width: 10%; }
+table.mantenimientos-table th:nth-child(7), table.mantenimientos-table td:nth-child(7) { width: 15%; }
+table.mantenimientos-table th:nth-child(8), table.mantenimientos-table td:nth-child(8) { width: 15%; }
+
+
+/* Contenedor y estilos para formularios */
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra para el contenedor */
+}
+.form-container h1 { /* Ajuste para h1 dentro de form-container */
+    margin-top: 0;
+    font-size: 2em; /* Un poco más pequeño que el h1 general */
+}
+.form-container form div {
+    margin-bottom: 15px;
+}
+.form-container label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+.form-container input[type="text"],
+.form-container input[type="date"],
+.form-container input[type="number"],
+.form-container textarea,
+.form-container select {
+    width: calc(100% - 22px); /* Ancho total menos padding y borde */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box; /* Incluye padding y borde en el ancho */
+    font-size: 16px;
+}
+.form-container textarea {
+    resize: vertical; /* Permitir redimensionar verticalmente */
+    min-height: 80px;
+}
+
+/* Info de la moto en la vista de mantenimientos específicos */
+.moto-info {
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #eaf6ff;
+    border-radius: 8px;
+    border: 1px solid #cceeff;
+}
+.moto-info h2 {
+    margin-bottom: 10px;
+    font-size: 1.8em; /* Un poco más grande para el nombre de la moto */
+}
+.moto-info p {
+    margin: 5px 0;
+    font-size: 1.1em;
+}
+
+/* Opcional: Estilos para el navbar principal si lo copias en todas las páginas */
+.main-navbar {
+    background-color: #007bff; /* Azul vibrante para el navbar */
+    padding: 10px 20px; /* Padding interno */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Sombra suave */
+    display: flex; /* Para alinear elementos */
+    justify-content: space-between; /* Espacio entre el logo y los enlaces */
+    align-items: center; /* Centrado vertical */
+    flex-wrap: wrap; /* Para que los elementos se envuelvan en pantallas pequeñas */
+}
+
+.main-navbar .navbar-brand {
+    color: white;
+    text-decoration: none;
+    font-size: 1.6em; /* Tamaño del logo */
+    font-weight: bold;
+    margin-right: 20px; /* Espacio a la derecha del logo */
+}
+
+.main-navbar .navbar-menu {
+    list-style: none; /* Eliminar viñetas */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Elementos del menú en línea */
+    gap: 15px; /* Espacio entre los ítems del menú */
+}
+
+.main-navbar .navbar-menu li a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease; /* Transición suave al hover */
+    font-size: 1.1em;
+}
+
+.main-navbar .navbar-menu li a:hover {
+    background-color: #0056b3; /* Color de fondo al hover */
+}
+
+
+/* Estilos para validación de formularios (estos SÍ son necesarios) */
+.is-invalid {
+    border-color: #dc3545 !important; /* Borde rojo para campos con error */
+}
+.invalid-feedback {
+    color: #dc3545; /* Texto del mensaje de error en rojo */
+    font-size: 0.875em;
+    margin-top: 0.25rem;
+    display: block; /* Asegura que el mensaje aparezca en una nueva línea */
+}
+
+
+/* Media queries para responsividad (diseño móvil) */
+@media (max-width: 768px) {
+    body { margin: 10px; } /* Reducir margen general en móviles */
+    .container, .index-container, .form-container { /* index-container ya no se usa, pero lo mantengo por si acaso */
+        margin: 10px auto;
+        padding: 15px;
+        border-radius: 8px;
+    }
+    h1 { font-size: 1.8em; margin-bottom: 20px; }
+    h2 { font-size: 1.3em; margin-bottom: 15px; }
+    p { font-size: 1em; margin-bottom: 20px; }
+    .btn { padding: 8px 12px; font-size: 0.9em; margin-bottom: 10px; display: block; width: calc(100% - 10px); }
+    .nav-buttons a { min-width: 140px; height: 50px; font-size: 1em; padding: 0 15px; }
+
+    /* Adaptación de tablas para móvil */
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    tr {
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+    td {
+        border: none;
+        position: relative;
+        padding-left: 50%;
+        text-align: right;
+        padding: 8px 15px;
+        border-bottom: 1px solid #eee;
+    }
+    td:last-child {
+        border-bottom: none;
+        white-space: normal;
+        text-align: right;
+    }
+    td:before {
+        position: absolute;
+        top: 8px;
+        left: 15px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        content: attr(data-label);
+        font-weight: bold;
+        text-align: left;
+        color: #555;
+    }
+
+    /* Ajuste para inputs de formulario en móvil */
+    .form-container input[type="text"],
+    .form-container input[type="date"],
+    .form-container input[type="number"],
+    .form-container textarea,
+    .form-container select {
+        width: calc(100% - 20px);
+        padding: 8px;
+        font-size: 15px;
+    }
+
+    /* Media query para el navbar principal en móvil */
+    .main-navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .main-navbar .navbar-brand {
+        margin-bottom: 10px;
+    }
+    .main-navbar .navbar-menu {
+        flex-direction: column;
+        width: 100%;
+    }
+    .main-navbar .navbar-menu li a {
+        display: block;
+        width: calc(100% - 24px);
+        text-align: left;
+    }
+}
